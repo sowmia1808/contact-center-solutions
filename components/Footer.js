@@ -1,4 +1,6 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import Link from 'next/link';
+
 
 export default function Footer() {
   return (
@@ -21,10 +23,10 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="/" className="hover:text-pink-500 transition">Home</a></li>
-              <li><a href="/pricing" className="hover:text-pink-500 transition">Pricing</a></li>
-              <li><a href="/whytegsoft" className="hover:text-pink-500 transition">Features</a></li>
-              <li><a href="/solutions" className="hover:text-pink-500 transition">Contact</a></li>
+              <li><Link href="/" className="hover:text-pink-500 transition">Home</Link></li>
+              <li><Link href="/pricing" className="hover:text-pink-500 transition">Pricing</Link></li>
+              <li><Link href="/whytegsoft" className="hover:text-pink-500 transition">Features</Link></li>
+              <li><Link href="/solutions" className="hover:text-pink-500 transition">Contact</Link></li>
             </ul>
           </div>
 
@@ -42,10 +44,10 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-pink-500 transition"><FaFacebookF /></a>
-              <a href="#" className="hover:text-pink-500 transition"><FaTwitter /></a>
-              <a href="#" className="hover:text-pink-500 transition"><FaLinkedinIn /></a>
-              <a href="#" className="hover:text-pink-500 transition"><FaYoutube /></a>
+              <Link href="#" className="hover:text-pink-500 transition"><FaFacebookF /></Link>
+              <Link href="#" className="hover:text-pink-500 transition"><FaTwitter /></Link>
+              <Link href="#" className="hover:text-pink-500 transition"><FaLinkedinIn /></Link>
+              <Link href="#" className="hover:text-pink-500 transition"><FaYoutube /></Link>
             </div>
           </div>
         </div>

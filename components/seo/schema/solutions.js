@@ -1,4 +1,4 @@
-export const solutions = {
+export const solutionsSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Tegsoft Contact Center Solutions",
