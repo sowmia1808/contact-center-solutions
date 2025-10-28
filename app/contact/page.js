@@ -27,12 +27,14 @@ export default function ContactSection() {
     setStatus("");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
+     const res = await fetch(
+  "https://contact-center-solutions-eputqyosv-mary-sowmias-projects.vercel.app/api/contact",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  }
+);
       if (res.ok) {
         setStatus("✅ Your inquiry has been sent successfully.");
         setFormData({ name: "", companyname:"", email: "", phone: "", message: "" });

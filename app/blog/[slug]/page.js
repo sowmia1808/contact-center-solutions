@@ -1,6 +1,14 @@
 import { client } from "@/lib/sanity";
 import Image from "next/image";
 
+export async function generateStaticParams() {
+  const allPosts = await client.fetch(`*[_type == "post"]{ "slug": slug.current }`);
+
+  return allPosts.map((post) => ({
+    slug: post.slug
+  }));
+}
+
 export default async function BlogPost({ params }) {
   const { slug } = params;
 

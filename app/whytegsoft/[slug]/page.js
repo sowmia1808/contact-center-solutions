@@ -1,11 +1,9 @@
 // app/why-tegsoft/[slug]/page.js
-"use client";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { FiSettings, FiPhoneCall, FiServer, FiCheckCircle, FiBriefcase } from "react-icons/fi";
-import Image from "next/image";
 import voice from "@/public/images/voice.png"
-import { motion } from "framer-motion";
+import AnimatedImage from "./AnimatedImage";
 
 
 
@@ -111,6 +109,12 @@ const pagesContent = {
   }
 };
 
+// Add this function for static export
+export async function generateStaticParams() {
+  return Object.keys(pagesContent).map((slug) => ({ slug }));
+}
+
+
 export default function WhyTegsoftSlugPage({ params }) {
   const { slug } = params;
   const pageData = pagesContent[slug];
@@ -118,6 +122,7 @@ export default function WhyTegsoftSlugPage({ params }) {
   if (!pageData) {
     notFound();
   }
+  
 
   return (
    <div className="max-w-7xl lg:mx-auto lg:px-6 lg:py-16 lg:mt-15 mt-40 mr-5 ml-5 ">
@@ -171,23 +176,7 @@ export default function WhyTegsoftSlugPage({ params }) {
     </div>
 
     {/* Image */}
-   <div className="lg:w-1/2 w-full">
-  <motion.div
-    className=" -mt-15"
-    initial={{ x: -200, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 1.5, ease: "easeOut" }}
-  >
-    <div className="relative w-full h-80 lg:h-[500px]">
-      <Image
-        src={pageData.image}
-        alt={pageData.title}
-        fill
-        className="object-contain"
-      />
-    </div>
-  </motion.div>
-</div>
+<AnimatedImage src={pageData.image} alt={pageData.title} />  
 
 
   </div>
