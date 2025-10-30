@@ -1,21 +1,19 @@
-// components/SEO/schemas/organization.js
-const organization = {
+export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Tegsoft UAE",
-  "url": "https://yourdomain.com",
-  "logo": "https://yourdomain.com/images/logo.png",
+  "name": "Tegsoft Contact Center UAE",
+  "url": "https://techbee.ae/about",
+  "logo": "https://techbee.ae/images/logo.png",
+  "sameAs": [
+    "https://www.linkedin.com/company/tegsoft-uae",
+    "https://www.facebook.com/TegsoftUAE"
+  ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+971-50-1234567",
-    "contactType": "customer service",
+    "telephone": "+971-56-4116174",
+    "contactType": "Customer Support",
     "areaServed": "AE",
-    "availableLanguage": "English, Arabic"
+    "availableLanguage": ["English", "Arabic"]
   },
-  "sameAs": [
-    "https://www.facebook.com/yourpage",
-    "https://www.linkedin.com/company/yourcompany"
-  ]
+  "description": "Learn about Tegsoft Contact Center UAE – our mission, expertise, and cloud contact center solutions across the UAE."
 };
-
-export default organization;

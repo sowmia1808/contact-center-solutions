@@ -1,5 +1,4 @@
 
-
 export default function PricingHero() {
   return (
     <section className="relative w-full h-[60vh] sm:h-[70vh]">

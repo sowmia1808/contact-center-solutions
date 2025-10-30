@@ -10,20 +10,44 @@ import {
   FaCloud, 
   FaHeadset 
 } from "react-icons/fa";
+import JsonLd from "@/components/seo/jsonld";
+import { organizationSchema } from "@/components/seo/schema/organization";
+
 
 export const metadata = {
   title: "About Us | Contact Center Solution in Dubai - Tegsoft UAE",
-  description:
-    "Learn about our contact center solutions in Dubai, UAE. We are an official Tegsoft partner providing cloud-based and on-premise call center software for inbound, outbound, blended, and omnichannel support.",
+  description: "Learn about our contact center solutions in Dubai, UAE. Official Tegsoft partner providing cloud-based and on-premise call center software.",
   keywords: [
     "Contact Center Solution Dubai",
     "Call Center Software UAE",
     "Tegsoft Partner Dubai",
     "Omnichannel Call Center UAE",
-    "Inbound Outbound Call Center Dubai",
-    "Customer Experience Solution UAE",
   ],
+  openGraph: {
+    title: "About Us | Contact Center Solution in Dubai - Tegsoft UAE",
+    description: "Learn about Tegsoft UAE contact center solutions: cloud-based, on-premise, inbound, outbound, blended & omnichannel.",
+    url: "https://techbee.ae/about",
+    siteName: "Tegsoft UAE",
+    images: [
+      {
+        url: "https://techbee.ae/images/about-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tegsoft Contact Center UAE",
+      },
+    ],
+    locale: "en_AE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Contact Center Solution in Dubai - Tegsoft UAE",
+    description: "Learn about Tegsoft UAE contact center solutions: cloud-based, on-premise, inbound, outbound, blended & omnichannel.",
+    images: ["https://techbee.ae/images/about-og.jpg"],
+    site: "@TegsoftUAE",
+  },
 };
+
 
 export default function About() {
   return (
@@ -31,22 +55,21 @@ export default function About() {
 <section className="relative w-full py-16 lg:py-28 lg:mt-20 mt-10 md:mt-20">
   <div className="max-w-7xl mx-auto px-6 lg:px-8 lg:flex lg:items-start lg:gap-12">
     {/* Left Side - Video */}
-    <div className="relative w-full md:h-80 lg:w-1/2 h-64 sm:h-80 lg:h-[500px] rounded-xl overflow-hidden  mt-10">
-      <video
-        className="object-cover w-full h-full rounded-xl"
-        src="/videos/about.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-      {/* Optional overlay */}
-      <div className="absolute inset-0 bg-black/20"></div>
-    </div>
+     <div className="relative w-full h-55 sm:h-90 md:h-110 lg:h-[500px] rounded-xl overflow-hidden mt-10">
+    <video
+      className="object-cover w-full h-full rounded-xl"
+      src="/videos/about.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+    />
+    <div className="absolute inset-0 bg-black/20"></div>
+  </div>
 
     {/* Right Side - Content */}
     <div className="lg:w-1/2 mt-10 lg:mt-0 text-center lg:text-left space-y-6">
-      <h2 className="text-3xl sm:text-4xl font-bold text-pink-600 mb-4">
+      <h2 className="text-3xl sm:text-4xl font-bold text-pink-600 mb-4 lg:text-2xl lg:text-center">
         About Our Contact Center Solution in Dubai
       </h2>
 
@@ -151,7 +174,7 @@ export default function About() {
       </button>
       </div>
      
-
+<JsonLd data={organizationSchema}/>
 
 </section>
 

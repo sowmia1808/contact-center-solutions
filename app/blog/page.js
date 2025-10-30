@@ -1,6 +1,47 @@
+export const metadata = {
+  title: "Why Tegsoft is the Best Contact Center Solution in UAE",
+  description:
+    "Discover how Tegsoft leads the UAE contact center market with AI-driven, cloud-based omnichannel solutions that enhance customer satisfaction.",
+  keywords: [
+    "Tegsoft UAE",
+    "Contact Center Solution UAE",
+    "Call Center Software Dubai",
+    "AI Contact Center Solution",
+  ],
+  alternates: {
+    canonical: "https://yourdomain.com/blog/why-tegsoft-best-contact-center-uae",
+  },
+  openGraph: {
+    title: "Why Tegsoft is the Best Contact Center Solution in UAE",
+    description:
+      "Tegsoft delivers AI-powered contact center solutions for seamless customer communication across the UAE.",
+    url: "https://yourdomain.com/blog/why-tegsoft-best-contact-center-uae",
+    siteName: "TechBee IT & Designs LLC",
+    images: [
+      {
+        url: "https://yourdomain.com/images/blog/tegsoft-uae.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tegsoft Contact Center UAE",
+      },
+    ],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Why Tegsoft is the Best Contact Center Solution in UAE",
+    description:
+      "Learn why Tegsoft stands out as the best contact center solution in the UAE.",
+    images: ["https://yourdomain.com/images/blog/tegsoft-uae.jpg"],
+  },
+};
+
+
 import { client } from "../../lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
+import JsonLd from "@/components/seo/jsonld";
+
 
 export default async function BlogPage() {
   const posts = await client.fetch(`*[_type == "post"]{
@@ -47,6 +88,7 @@ export default async function BlogPage() {
           >
             Read More →
           </Link>
+          <JsonLd data={getBlogSchema(post)} />
         </div>
       ))}
     </div>

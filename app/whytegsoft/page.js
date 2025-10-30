@@ -1,39 +1,49 @@
 export const metadata = {
-  title: "Why Choose Tegsoft Contact Center in UAE | Cloud Contact Center Software",
-  description:
-    "Discover why Tegsoft is the leading cloud-based contact center solution in the UAE. Boost customer experience, agent efficiency, and sales with advanced features like IVR, call recording, AI, and real-time analytics.",
+  title: "Why Tegsoft is the Best Contact Center Solution in UAE | Cloud & On-Premise",
+  description: "Discover why Tegsoft is the leading contact center solution in the UAE. Cloud-based, on-premise, inbound, outbound, blended & omnichannel call center software.",
   keywords: [
     "Tegsoft Contact Center UAE",
-    "Cloud Contact Center Dubai",
-    "Call Center Software UAE",
-    "Omnichannel Contact Center",
-    "IVR UAE",
-    "AI Contact Center Dubai"
+    "Best Call Center Solution UAE",
+    "Cloud Contact Center UAE",
+    "On-Premise Call Center UAE",
+    "Omnichannel Call Center UAE",
+    "Inbound Outbound Call Center UAE",
+    "Customer Experience Solution UAE",
+    "AI Based Contact Center Solution in UAE"
   ],
   openGraph: {
-    title: "Why Choose Tegsoft Contact Center in UAE",
-    description:
-      "Tegsoft is the leading cloud-based contact center solution in the UAE. Optimize customer interactions with IVR, call recording, AI, and real-time analytics.",
-    url: "https://yourdomain.com/why-tegsoft", // replace with your URL
+    title: "Why Tegsoft is the Best Contact Center Solution in UAE",
+    description: "Tegsoft provides cloud-based and on-premise contact center solutions for inbound, outbound, blended, and omnichannel support across the UAE.",
+    url: "https://techbee.ae/why-tegsoft",
     siteName: "Tegsoft UAE",
     images: [
       {
-        url: "/images/tegsoft-contact-center.png",
+        url: "https://techbee.ae/images/why-tegsoft-og.jpg",
         width: 1200,
         height: 630,
-        alt: "Tegsoft Contact Center Software UAE",
+        alt: "Tegsoft Best Contact Center UAE",
       },
     ],
     locale: "en_AE",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Why Tegsoft is the Best Contact Center Solution in UAE",
+    description: "Tegsoft provides cloud-based and on-premise contact center solutions for inbound, outbound, blended, and omnichannel support across the UAE.",
+    images: ["https://techbee.ae/images/why-tegsoft-og.jpg"],
+    site: "@TegsoftUAE",
+  },
 };
+
 
 import TegsoftFeaturesGrid from "@/components/TegsoftFeaturesGrid";
 import FeaturesSection from "@/components/FeaturesSection";
 import Image from "next/image";
 import JsonLd from "@/components/seo/jsonld";
 import productSchema from "@/components/seo/schema/product";
+import { organizationSchema } from "@/components/seo/schema/organization";
+import { serviceSchema } from "@/components/seo/schema/service";
 export default function WhyTegsoftPage() {
     
   return (
@@ -85,6 +95,8 @@ export default function WhyTegsoftPage() {
       <TegsoftFeaturesGrid/>
     <FeaturesSection/>
     <JsonLd data={productSchema}/>
+    <JsonLd data={organizationSchema}/>
+    <JsonLd data = {serviceSchema}/>
       
     </div>
   );

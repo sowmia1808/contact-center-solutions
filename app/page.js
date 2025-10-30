@@ -15,7 +15,8 @@ export const metadata = {
     "Customer Support Solutions UAE",
     "Call Center Software UAE",
     "Enterprise Call Center UAE",
-    "AI Customer Support UAE"
+    "AI Customer Support UAE",
+    "AI Call Center UAE"
   ],
   alternates: {
     canonical: "https://yourdomain.com/contact-center-solution-uae",
@@ -24,7 +25,8 @@ export const metadata = {
 
 import HeroSection from "./HeroSection";
 import JsonLd from "@/components/seo/jsonld";
-import organizationSchema from "@/components/seo/schema/organization";
+import { organizationSchema } from "@/components/seo/schema/organization";
+import faqSchema from "@/components/seo/schema/faqSchema";
 
 
 export default function Home() {
@@ -32,6 +34,7 @@ export default function Home() {
     <>      
 <HeroSection/>
 <JsonLd data={organizationSchema}/>
+<JsonLd data={faqSchema}/>
 
 </>
 
