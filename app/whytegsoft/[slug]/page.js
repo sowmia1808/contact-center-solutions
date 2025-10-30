@@ -125,7 +125,7 @@ export default function WhyTegsoftSlugPage({ params }) {
   
 
   return (
-   <div className="max-w-7xl lg:mx-auto lg:px-6 lg:py-16 lg:mt-15 mt-40 mr-5 ml-5 ">
+   <div className="max-w-7xl lg:mx-auto lg:px-6 lg:py-16 lg:mt-15 mt-40 mr-5 ml-5 lg:mt-30 md:mt-54">
   <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
     {/* Text Content */}
     <div className="lg:w-1/2 relative">

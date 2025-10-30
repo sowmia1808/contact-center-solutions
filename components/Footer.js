@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <p className="text-gray-300">R12-France Cluster,Dubai, UAE</p>
-            <p className="text-gray-300">Email: sales@techbee.ae</p>
+            <p className="text-gray-300">Email: info@techbee.ae</p>
             <p className="text-gray-300">Phone: +971564116174</p>
             <p className="text-gray-300">working Hours: Mon-Sat:8.30AM-6.00PM</p>
 

@@ -45,7 +45,7 @@ export default function HealthcarePage() {
   return (
     <main className="min-h-screen ">
   {/* Hero Banner Section */}
- <section className="relative mt-20">
+ <section className="relative mt-30">
   <div className="container mx-auto  flex flex-col md:flex-row items-center">
     {/* Left Column - Image */}
     <div className="md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0">
@@ -59,7 +59,7 @@ export default function HealthcarePage() {
     </div>
 
     {/* Right Column - Text */}
-    <div className="md:w-1/2 text-center md:text-left">
+    <div className="md:w-1/2 text-center md:text-left lg:mt-16">
       <h1 className="text-xl md:text-4xl font-extrabold text-pink-800 mb-6 text-gray-900 drop-shadow-lg">
         Healthcare Solutions with Tegsoft
       </h1>

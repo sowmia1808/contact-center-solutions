@@ -28,10 +28,10 @@ export const metadata = {
 export default function About() {
   return (
 
-<section className="relative w-full py-16 lg:py-28">
+<section className="relative w-full py-16 lg:py-28 lg:mt-20 mt-10 md:mt-20">
   <div className="max-w-7xl mx-auto px-6 lg:px-8 lg:flex lg:items-start lg:gap-12">
     {/* Left Side - Video */}
-    <div className="relative w-full lg:w-1/2 h-64 sm:h-80 lg:h-[500px] rounded-xl overflow-hidden shadow-lg mt-10">
+    <div className="relative w-full md:h-80 lg:w-1/2 h-64 sm:h-80 lg:h-[500px] rounded-xl overflow-hidden  mt-10">
       <video
         className="object-cover w-full h-full rounded-xl"
         src="/videos/about.mp4"

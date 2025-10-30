@@ -45,7 +45,7 @@ export default function RealEstatePage() {
   return (
     <main className=" min-h-screen">
       {/* Hero Section */}
-      <section className="relative mt-20">
+      <section className="relative mt-30">
                                       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
                                         {/* Left Column - Image */}
                                         <div className="relative w-full md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0 lg:ml-25 h-64 sm:h-80 lg:h-125 md:h-125">
@@ -59,7 +59,7 @@ export default function RealEstatePage() {
                                         </div>
                                     
                                         {/* Right Column - Text */}
-                                        <div className="md:w-1/2 text-center md:text-left lg:mr-25 mt-5 lg:mt-5 md:mt-5">
+                                        <div className="md:w-1/2 text-center md:text-left lg:mr-25 mt-5 lg:mt-16 md:mt-10">
                                           <h1 className="text-pink-800 text-3xl md:text-4xl font-bold mb-4 text-center">
             Real Estate Solutions with Tegsoft
           </h1>

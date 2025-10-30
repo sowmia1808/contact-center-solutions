@@ -8,9 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "export": "next export"
-
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@sanity/client": "^7.11.2",
     "@sanity/icons": "^3.7.4",
     "@sanity/image-url": "^1.2.0",

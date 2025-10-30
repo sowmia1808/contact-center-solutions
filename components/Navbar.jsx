@@ -57,86 +57,101 @@ export default function Navbar() {
 
   return (
     <>
-    <nav ref={navRef} className="top-9 bg-pink-900 shadow-md fixed z-50 max-w-8xl mx-auto px-6 left-0 right-0 ">
-      <div className="max-w-8xl mx-auto px-6 lg:px-8 flex justify-between items-center h-10 text-white mr-10 mb-5  ">
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-  <Image
-    src="/images/logo.png"
-    alt="Techbee Logo"
-    width={250}
-    height={40}
-    className="object-contain"
-  />
-</Link>
-
-
-        {/* Desktop Menu   */}
-        <div className="hidden md:flex items-center space-x-8 text-white  ">
-          <div className="flex space-x-6 items-center">
-            {navLinks.map((link, idx) => (
-              <div key={link.name} className="relative">
-                {link.dropdown ? (
-                  <div className="relative">
-                    <div className="flex items-center space-x-1">
-  <Link
-    href={link.path}
-    className="text-white  hover:text-pink-600  font-medium"
+    <div className="hidden md:flex justify-end items-center bg-pink-900 text-white text-sm md:text-base py-3  px-6 lg:px-15 z-[60] fixed top-0 left-0 right-0 lg:rounded-l-full lg:rounded-r-full ">
+  <a
+    href="tel:+971564116174"
+    className="flex items-center hover:text-pink-300 mr-6 transition "
   >
-    {link.name}
-  </Link>
-  <button
-    onClick={(e) => {
-      e.stopPropagation(); // prevent link click
-      setOpenDropdown(openDropdown === idx ? null : idx);
-    }}
-    className="text-sm text-white  hover:text-pink-600 dark:hover:text-pink-400"
+    <HiOutlinePhone className="w-4 h-4 md:w-5 md:h-5 mr-1" /> +971 564116174
+  </a>
+  <a
+    href="mailto:sales@techbee.ae"
+    className="flex items-center hover:text-pink-300 transition"
   >
-    {openDropdown === idx ? "▲" : "▼"}
-  </button>
+    <HiOutlineMail className="w-4 h-4 md:w-5 md:h-5 mr-1" /> info@techbee.ae
+  </a>
 </div>
+    <nav ref={navRef} className=" bg-pink-900 fixed top-[16px] z-50 max-w-8xl mx-auto px-6 left-0 right-0 lg:rounded-l-full lg:rounded-r-full">
+      <div className=" max-w-8xl lg:px-8 flex justify-between items-center h-20 text-white mb-5 sm:mt-5 ">
+        {/* Logo */}
+       <div className="flex items-center">
+    <Link href="/" className="flex items-center">
+      <Image
+        src="/images/logo.png"
+        alt="Techbee Logo"
+        width={250}
+        height={40}
+        className="object-contain"
+      />
+    </Link>
+  </div>
 
 
-                    {openDropdown === idx && (
-                      <div className="absolute left-0 mt-2 w-56   py-2 z-50">
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.path}
-                            className="block px-4 py-2 text-white hover:bg-pink-50 dark:hover:bg-gray-800 transition"
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    href={link.path}
-                    className="text-white  hover:text-pink-600 dark:hover:text-pink-400 font-medium"
-                  >
-                    {link.name}
-                  </Link>
-                )}
+
+         {/* Desktop Menu (Right End) */}
+  <div className="hidden md:flex items-center space-x-8 text-white">
+    <div className="flex space-x-6 items-center">
+      {navLinks.map((link, idx) => (
+        <div key={link.name} className="relative">
+          {link.dropdown ? (
+            <div className="relative">
+              <div className="flex items-center space-x-1">
+                <Link
+                  href={link.path}
+                  className="text-white hover:text-pink-600 font-medium"
+                >
+                  {link.name}
+                </Link>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpenDropdown(openDropdown === idx ? null : idx);
+                  }}
+                  className="text-sm text-white hover:text-pink-600"
+                >
+                  {openDropdown === idx ? "▲" : "▼"}
+                </button>
               </div>
-            ))}
-          </div>
 
-          
+              {openDropdown === idx && (
+                <div className="absolute left-0 mt-2 w-40 py-2 z-50 bg-pink-800 rounded-3xl">
+                  {link.dropdown.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.path}
+                      className="block px-4 py-2 text-white hover:bg-pink-500 transition"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link
+              href={link.path}
+              className="text-white hover:text-pink-600 font-medium"
+            >
+              {link.name}
+            </Link>
+          )}
         </div>
+      ))}
+    </div>
+  </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
-          <button onClick={() => setIsOpen((s) => !s)} aria-label="Toggle menu">
-            {isOpen ? (
-              <HiX className="w-6 h-6 text-pink-600 " />
-            ) : (
-              <HiMenu className="w-6 h-6 text-pink-600 " />
-            )}
-          </button>
-        </div>
-      </div>
+         <div className="md:hidden flex items-center ml-4">
+    <button onClick={() => setIsOpen((s) => !s)} aria-label="Toggle menu">
+      {isOpen ? (
+        <HiX className="w-6 h-6 text-pink-600" />
+      ) : (
+        <HiMenu className="w-6 h-6 text-pink-600" />
+      )}
+    </button>
+  </div>
+</div>
+      
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
@@ -200,27 +215,6 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-    {/* Contact Bar */}
-<>
-  {/* Contact Bar (above navbar) */}
-  <div className="hidden md:flex justify-end items-center bg-pink-900 text-white text-sm md:text-base py-2 px-6 lg:px-12 shadow-sm z-40 fixed top-0 left-0 right-0">
-    <a
-      href="tel:+971564116174"
-      className="flex items-center hover:text-pink-300 mr-6 transition"
-    >
-      <HiOutlinePhone className="w-4 h-4 md:w-5 md:h-5 mr-1" /> +971 564116174
-    </a>
-    <a
-      href="mailto:sales@techbee.ae"
-      className="flex items-center hover:text-pink-300 transition"
-    >
-      <HiOutlineMail className="w-4 h-4 md:w-5 md:h-5 mr-1" /> sales@techbee.ae
-    </a>
-  </div>
-
-  
-</>
-
 
     </>
   );

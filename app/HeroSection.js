@@ -79,7 +79,7 @@ export default function HeroSection() {
   return (
    <>
    <section
-      className="max-w-8xl relative top-20 px-6 lg:px-12 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
+      className="max-w-8xl relative top-20 px-6 lg:px-12 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center lg:mt-10 mt-20"
       role="banner"
     >
       {/* Left Side - Hero Image with Orbiting Icons */}
@@ -144,7 +144,7 @@ export default function HeroSection() {
 
         {/* CTA Button */}
         <button className="relative group overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-pink-900 to-pink-700 px-10 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-pink-400/50">
-          <span className="relative z-10">Book a Demo</span>
+          <span className="relative z-10"> <Link href="/contact">Book a Demo</Link></span>
           <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 opacity-0 group-hover:opacity-100 transition duration-500"></div>
         </button>
       </div>
@@ -201,7 +201,7 @@ export default function HeroSection() {
 
 
       {/* Services Section */}
-      <section className="max-w-8xl mx-auto px-6 lg:px-8 py-20 lg:mr-25 lg:ml-25 -mt-25">
+      <section className="max-w-8xl mx-auto px-6 lg:px-8 py-20 lg:mr-25 lg:ml-25 -mt-25 ">
         <h2 className="text-3xl sm:text-4xl font-bold text-pink-900 mb-8 text-center">
           Our Services
         </h2>
@@ -244,7 +244,7 @@ export default function HeroSection() {
              src="/images/contact.png"
              alt="Contact Center Solutions"
              fill
-             className="object-cover rounded-t-xl lg:rounded-l-xl lg:rounded-tr-none"
+             className="object-contain rounded-t-xl lg:rounded-l-xl lg:rounded-tr-none"
            />
          </div>
      

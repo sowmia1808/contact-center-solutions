@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import emailjs from "@emailjs/browser"; 
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -21,49 +22,59 @@ export default function ContactSection() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatus("");
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setStatus("");
 
-    try {
-     const res = await fetch(
-  "https://contact-center-solutions-eputqyosv-mary-sowmias-projects.vercel.app/api/contact",
-  {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData),
-  }
-);
-      if (res.ok) {
-        setStatus("✅ Your inquiry has been sent successfully.");
-        setFormData({ name: "", companyname:"", email: "", phone: "", message: "" });
-      } else {
-        setStatus("❌ Something went wrong. Please try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      setStatus("⚠️ Error sending message.");
+  // 1️⃣ Send email to Admin
+  emailjs.send(
+    "service_z4sjz6g",          // Your EmailJS Service ID
+    "template_8vwsybw",         // Admin template ID
+    formData,                    // formData object
+    "QhexQlB877HpD5wdO"         // Your Public Key
+  ).then(
+    () => {
+      console.log("Admin email sent");
+    },
+    (error) => {
+      console.error("Admin email failed:", error);
     }
-    setLoading(false);
-  };
+  );
 
+  // 2️⃣ Send Auto-Reply to User
+  emailjs.send(
+    "service_z4sjz6g",          // Your EmailJS Service ID
+    "template_r7u55po",         // Auto-reply template ID
+    formData,
+    "QhexQlB877HpD5wdO"         // Your Public Key
+  ).then(
+    () => {
+      setStatus("✅ Message sent successfully! Check your email for confirmation.");
+      setFormData({ name: "", companyname: "", email: "", phone: "", message: "" });
+    },
+    (error) => {
+      console.error("Auto-reply failed:", error);
+      setStatus("❌ Failed to send message. Please try again.");
+    }
+  ).finally(() => setLoading(false));
+};
   return (
-    <section className="relative mb-16">
-  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-stretch mt-30 p-5">
+    <section className="relative mb-16 mt-5 lg:mt-35">
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-stretch p-5">
 
     {/* Left Side Image - hidden on small screens */}
-    <div className="relative w-full lg:w-1/2 h-80 sm:h-[400px] md:h-[500px] lg:h-auto hidden lg:block">
+    <div className="relative w-full lg:w-1/2 h-80 sm:h-[400px] md:h-[500px] lg:h-auto hidden lg:block ">
       <Image
         src="/images/contact.png"
         alt="Contact Center Solutions"
         fill
-        className="object-cover rounded-t-xl lg:rounded-l-xl lg:rounded-tr-none"
+        className="object-contain rounded-t-xl lg:rounded-l-xl lg:rounded-tr-none"
       />
     </div>
 
     {/* Right Side Form */}
-    <div className="bg-white dark:bg-gray-900 p-8 shadow-lg border border-pink-100 lg:w-1/2 flex flex-col justify-center rounded-b-xl lg:rounded-r-xl lg:rounded-bl-none">
+    <div className="bg-white dark:bg-gray-900 p-8 shadow-lg border border-pink-100 lg:w-1/2 flex flex-col justify-center rounded-b-xl lg:rounded-r-xl lg:rounded-bl-none ">
       <h2 className="text-3xl font-bold text-pink-700 mb-4">
         Get in Touch
       </h2>
@@ -146,7 +157,7 @@ export default function ContactSection() {
             id="phone"
             name="phone"
             placeholder=" "
-            pattern="[0-9]{8,15}" 
+            pattern="[0-9]{8,15}"
             value={formData.phone}
             onChange={handleChange}
             required

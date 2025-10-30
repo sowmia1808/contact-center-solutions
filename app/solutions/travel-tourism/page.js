@@ -45,10 +45,10 @@ export default function TravelTourismPage() {
   return (
     <main className=" min-h-screen">
       {/* Hero Section */}
-      <section className="relative">
+      <section className="relative mt-30">
                                             <div className="container  flex flex-col md:flex-row items-center text-justify mt-22">
                                               {/* Left Column - Image */}
-                                              <div className="relative w-full md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0  h-64 sm:h-80 md:h-[400px] lg:h-[600px] md:-mt-60 xl:mt-5 lg:ml-50">
+                                              <div className="relative w-full md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0  h-64 sm:h-80 md:h-[400px] lg:h-[600px] md:-mt-60 xl:mt-5 lg:ml-86">
                                                 <Image
                                                   src="/images/travel and tourism.png"
                                                   alt="Travel and Tourism Communication"
@@ -59,7 +59,7 @@ export default function TravelTourismPage() {
                                               </div>
 
                                               {/* Right Column - Text */}
-                                              <div className="md:w-1/2 text-center md:text-left   lg:mt-10 lg:mr-10 ">
+                                              <div className="md:w-1/2 text-center md:text-left   lg:mt-10 ">
                                                 <h1 className="text-pink-800 text-3xl text-xl md:text-3xl font-bold mb-4 text-center ml-2 mr-2">
             Travel & Tourism Solutions with Tegsoft
           </h1>

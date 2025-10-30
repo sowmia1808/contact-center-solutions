@@ -37,11 +37,11 @@ import productSchema from "@/components/seo/schema/product";
 export default function WhyTegsoftPage() {
     
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="max-w-7xl mx-auto px-6 py-12 mt-15 lg:mt-15">
 
       <div className="max-w-8xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center md:items-start gap-8">
   {/* Left Side: Text */}
-  <div className="md:w-1/2">
+  <div className="md:w-1/2 lg:mt-16">
     <h1 className="text-4xl font-bold text-pink-900 mb-6">
       Why Choose Tegsoft for Your Contact Center in UAE
     </h1>

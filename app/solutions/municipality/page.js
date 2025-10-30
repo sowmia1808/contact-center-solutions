@@ -45,7 +45,7 @@ export default function MunicipalityPage() {
   return (
     <main className=" min-h-screen">
       {/* Hero Section */}
-        <section className="relative">
+        <section className="relative mt-30">
                                 <div className="container mx-auto px-6 flex flex-col md:flex-row items-center mt-20">
                                   {/* Left Column - Image */}
                                   <div className="relative w-full md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0  h-64 sm:h-80 md:h-[400px] lg:h-[600px] md:-mt-60 xl:mt-5">
